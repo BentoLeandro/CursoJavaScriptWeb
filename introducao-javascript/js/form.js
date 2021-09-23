@@ -24,18 +24,18 @@ btnAdicionar.addEventListener("click", function(event){
         });       
         return;
     }
-
-    console.log(paciente);    
-
-    var tabela = document.querySelector("#tabela-pacientes");
     
-    var pacienteTr = adicionaLinhaTabela(paciente);
-
-    tabela.appendChild(pacienteTr);
+    adicionaPacienteTabela(paciente);
 
     form.reset(); //limpa os campos do formulario
     //console.log(pacienteTr);
 });
+
+function adicionaPacienteTabela(paciente){
+    var pacienteTr = adicionaLinhaTabela(paciente);
+    var tabela = document.querySelector("#tabela-pacientes");
+    tabela.appendChild(pacienteTr);
+}
 
 function retornaDadosFormulario(form){
     var dadosPaciente = {
